@@ -137,102 +137,131 @@ body {
 
 
 /* Middle */
+/* Section Title */
 .title {
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .title h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: #131a43;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.title h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #131a43;
+  margin-bottom: 2rem;
+}
+
+/* Middle Section */
+.middle {
+  background-color: #f9f9f9;
+  padding: 5rem 5vw;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+/* Grid for each row */
+.middle-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.middle-row.row-2 {
+  grid-template-areas: "image text";
+}
+
+.middle-row.row-1,
+.middle-row.row-3 {
+  grid-template-areas: "text image";
+}
+
+/* Text content */
+.middle-row .text {
+  grid-area: text;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2.5rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.middle-row .text h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #5c3d9c;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.5px;
+  text-transform: capitalize;
+}
+
+.middle-row .text p {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+
+/* Image block */
+.middle-row .image {
+  grid-area: image;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s ease;
+}
+
+/* Consistent image styling */
+.middle-row .image img {
+  max-height: 280px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Hover effect (optional) */
+.middle-row .text:hover,
+.middle-row .image:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .middle-row {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "text"
+      "image";
   }
 
-.middle {
-    background-color: #f9f9f9;
-    padding: 5rem 5vw;
-    display: flex;
-    flex-direction: column;
-    gap: 4rem;
-  }
-  
-  /* Each row is a 2-column grid */
-  .middle-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: stretch; 
-  }
-  
-  /* Alternate layout for row 2 */
   .middle-row.row-2 {
-    grid-template-areas: "image text";
+    grid-template-areas:
+      "text"
+      "image";
   }
-  
-  .middle-row.row-1,
-  .middle-row.row-3 {
-    grid-template-areas: "text image";
+
+  .title h1 {
+    font-size: 2.5rem;
   }
-  
-  /* Assign grid areas */
-  .middle-row .text {
-    grid-area: text;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 2rem;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    align-items: center;
-    text-align: center;
-  }
-  
+
+  .middle-row .text,
   .middle-row .image {
-    grid-area: image;
-    display: flex;
-    justify-content: center;
+    text-align: center;
     align-items: center;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
   }
-  
-  /* Consistent image size */
-  .middle-row .image img {
-    max-height: 300px;
-    width: auto;
-    height: 100%;
-    object-fit: contain;
-  }
-  
-  /* Responsive: stack on small screens */
-  @media (max-width: 768px) {
-    .middle-row {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "text"
-        "image";
-    }
-  
-    .middle-row.row-2 {
-      grid-template-areas:
-        "text"
-        "image";
-    }
-  
-    .middle-row .text,
-    .middle-row .image {
-      padding: 1rem;
-      text-align: center;
-    }
-  
-    .middle-row .image img {
-      max-height: 200px;
-    }
-  }
+}
+
   
 /* Roadmap */
 
