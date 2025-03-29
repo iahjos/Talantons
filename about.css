@@ -1,3 +1,9 @@
+* {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
 body {
     font-family: "Poppins", sans-serif;
     background-color: #f9f9f9;
@@ -75,7 +81,8 @@ body {
 /* Mission Statement */
 .vision-mission {
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     background-color: #f3f0f9;
     padding: 5rem 10vw;
     box-sizing: border-box;
@@ -237,7 +244,7 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 1024px) {
+@media (max-width: 768px) {
   .middle-row {
     grid-template-columns: 1fr;
     grid-template-areas:
@@ -251,22 +258,26 @@ body {
       "image";
   }
 
-  .title h1 {
-    font-size: 2.5rem;
-  }
-
   .middle-row .text,
   .middle-row .image {
+    padding: 1.5rem;
     text-align: center;
     align-items: center;
   }
-}
 
+  .middle-row .text h2 {
+    font-size: 1.3rem;
+  }
+
+  .middle-row .text p {
+    font-size: 1rem;
+  }
+}
   
 /* Roadmap */
-
 .roadmap {
-  height: 80vh;
+  min-height: 80vh;
+  height: 100%;
   width: 100%;
   background-color: #f3f0f9; /* soft lavender background */
   padding: 4rem 5vw;
