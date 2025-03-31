@@ -146,5 +146,29 @@
       xOffset: 0.2
     });
   </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(
+    ".vision-mission .section, .roadmap-title, .roadmap .card"
+  );
+
+  function revealOnScroll() {
+    const triggerBottom = window.innerHeight * 0.85;
+
+    revealElements.forEach(el => {
+      const top = el.getBoundingClientRect().top;
+      if (top < triggerBottom) {
+        el.classList.add("visible");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // Run once on load
+});
+</script>
+
+
 </body>
 </html>
