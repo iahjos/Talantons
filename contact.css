@@ -1,0 +1,252 @@
+* {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+  
+  body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+  }
+  
+  /* Navbar */
+  .navbar {
+      padding: 1rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+  }
+  
+  .navbar-nav .nav-link {
+      font-size: 1rem;
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+  }
+  
+  .navbar-nav .nav-link:hover {
+      color: #5c3d9c; 
+  }
+
+  .nav-logo {
+    height: 60px;       /* Adjust based on your logo height */
+    width: auto;
+    display: block;
+  }
+  
+
+/* Main Section */
+main {
+    background-color: #111;
+}
+
+.contact-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center; /* vertically center both cards */
+    gap: 2rem;
+    padding: 5rem 0rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* ==== Left Card ==== */
+  @property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+  
+  .contact-left-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 4px; /* spacing for border */
+    border-radius: 20px;
+    background: transparent;
+    overflow: visible;
+  }
+  
+  /* Spinning gradient ring around the card */
+  .contact-left-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    padding: 3px;
+    border-radius: 20px;
+    background: conic-gradient(
+        from var(--angle),
+        #ff0000,   /* Red */
+        #8000ff,   /* Purple */
+        #0066ff,   /* Blue */
+        #00e0e0,   /* Teal */
+        #00ff66,   /* Green */
+        #ffaa00,   /* Orange */
+        #ff0000    /* Red again to loop smoothly */
+      );
+      
+    background-size: 300% 300%;
+    animation: spin 8s linear infinite;
+    z-index: -1;
+  }
+  
+
+/* The actual card */
+.contact-left {
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 400px;
+  }
+
+  @keyframes spin {
+    from{
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+  }
+  
+  .contact-left h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+  }
+  
+  .contact-left p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+  }
+  
+  .email-box {
+    display: inline-flex;
+    align-items: center;
+    background-color: #111;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .email-box a {
+    color: #8ecdfc;
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+  
+  /* ==== Right Card (Form) ==== */
+  .contact-form {
+    flex: 1;
+    min-width: 300px;
+    background-color: #1a1a1a;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .contact-form .form-row {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ccc;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
+    transition: border 0.3s ease;
+  }
+  
+  .form-group input:focus,
+  .form-group textarea:focus {
+    border: 1px solid #5c3d9c;
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .contact-form button {
+    background-color: #5c3d9c;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #7a5fd1;
+  }
+  
+  /* ==== Responsive Stacking ==== */
+  @media (max-width: 768px) {
+    .contact-wrapper {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .contact-left,
+    .contact-form {
+      width: 100%;
+    }
+  }
+  
+/* Footer (basic placeholder) */
+footer {
+    background-color: #333333;
+    color: #ccc;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-start;   
+    align-items: center;       
+    height: 14vh;              
+    border-top: 1px solid #333;
+    padding: 0 1rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+      

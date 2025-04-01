@@ -32,6 +32,12 @@ body {
 .navbar-nav .nav-link:hover {
     color: #5c3d9c; 
 }
+
+.nav-logo {
+  height: 60px;       
+  width: auto;
+  display: block;
+}
   
 /* Main Area */
 .top {

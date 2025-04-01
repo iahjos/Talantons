@@ -27,6 +27,12 @@ body {
     color: #5c3d9c; 
 }
 
+.nav-logo {
+  height: 60px;  
+  width: auto;
+  display: block;
+}
+
 main {
     background: black;
     color: white;
