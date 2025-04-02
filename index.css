@@ -11,6 +11,8 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     background-color: #000000;
     color: #fff !important;
+    max-height: 10vh;
+    height: 100%;
 }
 
 .navbar-brand {
@@ -53,26 +55,30 @@ main {
 
 /* Top Section */
 .top {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    height: 100%;
-    border-bottom: 1px solid #ddd; 
-    background: transparent;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  min-height: 91vh;
+  height: 100%;
+  border-bottom: 1px solid #ddd; 
+  background: transparent;
 }
 
 .top h1 {
-    font-size: 3.5rem;
-    letter-spacing: 20px;
-    text-transform: uppercase;
+  font-size: 3.5rem;
+  letter-spacing: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: max-content; 
 }
 
-.top h2 {
-    letter-spacing: 10px;
-    text-transform: uppercase;
+@media (max-width: 900px) {
+  .top h1 {
+    font-size: 2rem;
+    font-weight: 400;
+  }
 }
 
 /* Animated BG */
@@ -193,28 +199,6 @@ main {
 .fade-in-section.is-visible {
   opacity: 1;
   transform: none;
-}
-
-@media (max-width: 900px) {
-  .vision-section {
-    flex-direction: column;
-    padding: 60px 5%;
-  }
-
-  .vision-text {
-    border-left: none;
-    border-top: 2px solid currentColor; /* this creates a horizontal line */
-    padding-top: 30px;
-  }  
-
-  .vision-image {
-    order: 1; /* optional: moves image above text on mobile */
-    margin-bottom: 30px;
-  }
-
-  .white-theme .vision-text {
-    border-left: none; 
-  }
 }
 
   /* Middle Section */
@@ -386,7 +370,7 @@ button
 */
 
   
-/* Footer (basic placeholder) */
+/* Footer */
 footer {
     background-color: black;
     color: white;
@@ -402,36 +386,6 @@ footer {
     font-weight: 600;
   }
 
-/* Responsive tweaks */
-@media (max-width: 768px) {
-    .top h1 {
-        font-size: 2.5rem;
-    }
-
-    .middle h1 {
-        font-size: 2rem;
-    }
-
-    .middle p {
-        font-size: 1rem;
-    }
-
-    .icons h1 {
-        font-size: 2rem;
-        letter-spacing: 1px;
-    }
-
-    .icon {
-        width: 150px;
-        height: 150px;
-    }
-
-    .icon-row {
-        gap: 1.5rem;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-}
 
 @media (max-width: 991.98px) {
   .navbar-collapse {
@@ -454,4 +408,28 @@ footer {
     margin: 1rem 0;
   }
 }
+
+
+@media (max-width: 900px) {
+  .vision-section {
+    flex-direction: column;
+    padding: 60px 5%;
+  }
+
+  .vision-text {
+    border-left: none;
+    border-top: 2px solid currentColor; /* this creates a horizontal line */
+    padding-top: 30px;
+  }  
+
+  .vision-image {
+    order: 1; /* optional: moves image above text on mobile */
+    margin-bottom: 30px;
+  }
+
+  .white-theme .vision-text {
+    border-left: none; 
+  }
+}
+
 
