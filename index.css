@@ -64,7 +64,7 @@ main {
   min-height: 91vh;
   height: 100%;
   border-bottom: 1px solid #ddd; 
-  position: relative; /* so background sticks to this section */
+  position: relative; 
   overflow: hidden;
 }
 
@@ -101,7 +101,7 @@ main {
     z-index: 0; 
   }
 
-/* New Middle Section */
+/* Vision Section */
 .vision-section {
   display: flex;
   justify-content: space-between;
@@ -180,9 +180,9 @@ main {
 }
 
 .emphasis-bar {
-  display: inline-block; /* <-- Important: no block breaking */
+  display: inline-block; 
   width: 4px;
-  background-color: red; /* test color — change to currentColor later */
+  background-color: red; 
   border-radius: 2px;
 }
 
@@ -197,8 +197,65 @@ main {
   transform: none;
 }
 
-  /* Middle Section */
-  .middle {
+/* Middle Section */
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10rem;
+  padding: 80px 40px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+
+.middle-text {
+  flex: 0 0 35%; 
+  max-width: 500px;
+  min-width: 300px;
+  line-height: 2;
+  align-self: center;
+}
+
+.middle-text h2 {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: red;
+}
+
+.middle-text p {
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #444444;
+}
+
+.bulletpoints {
+  flex: 0 0 45%; 
+  max-width: 500px;
+  min-width: 300px;
+}
+
+.bulletpoints ul {
+  padding-left: 20px;
+  font-size: 1.25rem;
+  line-height: 2;
+  color: #444444;
+}
+
+.bulletpoints li {
+  margin-bottom: 16px;
+}
+
+@media (max-width: 900px) {
+  .middle-text {
+    font-size: 1rem;
+  }
+}
+
+  /* Middles Section */
+  .middles {
     background-image: url('office.jpg');
     background-size: cover;
     background-position: center;
@@ -313,42 +370,41 @@ main {
   margin: 0.5rem 0 1.5rem 0;
 }
 
-/*
+/* Icons Section */
 .icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 4rem 1rem;
-    text-align: center;
-    background-color: black; 
-    justify-content: center;
-    min-height: 90vh;
-    height: 100%;
-    border-bottom: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  background-color: black; 
+  justify-content: center;
+  min-height: 90vh;
+  height: 100%;
+  border-bottom: 1px solid #ddd;
 }
 
 .icons h1 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: White;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: White;
 }
 
 .icon {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    margin: 1rem;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  margin: 1rem;
 }
 
 .icon-row {
-    display: flex;
-    gap: 2rem;
+  display: flex;
+  gap: 2rem;
 }
 
-button
-.learn-more-btn {
+a.learn-more-btn {
   display: inline-block;
   margin-top: 2rem;
   padding: 0.8rem 2rem;
@@ -363,9 +419,13 @@ button
   text-decoration: none;
   transition: background-color 0.3s ease;
 }
-*/
 
-  
+a.learn-more-btn:hover {
+  background-color: purple;
+  color: #000;
+}
+
+
 /* Footer */
 footer {
     background-color: black;
@@ -386,10 +446,10 @@ footer {
 @media (max-width: 991.98px) {
   .navbar-collapse {
     position: absolute;
-    top: 60px; /* adjust as needed */
+    top: 60px; 
     left: 0;
     width: 100%;
-    background-color: #000; /* match navbar */
+    background-color: #000; 
     text-align: center;
     padding: 2rem 0;
     z-index: 999;
@@ -414,12 +474,11 @@ footer {
 
   .vision-text {
     border-left: none;
-    border-top: 2px solid currentColor; /* this creates a horizontal line */
-    padding-top: 30px;
+    border-top: 2px solid currentColor; 
   }  
 
   .vision-image {
-    order: 1; /* optional: moves image above text on mobile */
+    order: 1; 
     margin-bottom: 30px;
   }
 
@@ -427,5 +486,3 @@ footer {
     border-left: none; 
   }
 }
-
-
